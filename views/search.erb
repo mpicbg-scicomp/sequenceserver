@@ -241,6 +241,24 @@
                     </div>
                   </li>
                 <% end %>
+
+				  <script>
+					  $('#<%= params[:db] %>').prop('checked', true);
+
+					  <% if not params[:org].nil? and not params[:org].empty? %>
+					  $(':checkbox').each(function() {
+						  if(this.id.indexOf('<%=params[:org]%>') > -1)
+							  this.checked = true;
+					  });
+					  <% end %>
+
+					  <% if not params[:seq].nil? and not params[:seq].empty? %>
+					  $(document).ready(function() {
+						  $('#sequence').val('<%= params[:seq] %>');
+					  });
+					  <% end %>
+				  </script>
+
               </ul>
             </div>
           </div>
@@ -266,7 +284,7 @@
                   type="text"
                   class="form-control" name="advanced" id="advanced"
                   title="View, and enter advanced parameters."
-                  placeholder="eg: -evalue 1.0e-5 -num_alignments 100"/>
+                  placeholder="eg: -evalue 1.0e-5 -num_alignments 100" value="-evalue 1.0e-5"/>
                   <div class="input-group-addon cursor-pointer" data-toggle="modal" data-target="#help">
                     <i class="fa fa-question"></i>
                   </div>

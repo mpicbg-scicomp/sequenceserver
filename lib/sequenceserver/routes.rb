@@ -118,7 +118,7 @@ target="#{target}">)
 
     # Render the search form.
     get '/' do
-      erb :search, :locals => { :databases => Database.group_by(&:type) }
+      erb :search, :locals => { :databases => Database.group_by(&:type), :params => params }
     end
 
     # BLAST search!
