@@ -60,6 +60,18 @@ module SequenceServer
     # ---------
     # See methods provided by default for an example implementation.
 
+    def planmine
+      accession  = encode self.accession
+      host = request.host
+      url = "http://#{host}/planmine/portal.do?externalids=#{accession}"
+      {
+          :order => 0,
+          :url   => url,
+          :title => 'Planmine',
+          :icon  => 'fa-search'
+      }
+    end
+
     def sequence_viewer
       accession  = encode self.accession
       database_ids = encode querydb.map(&:id).join(' ')
@@ -67,7 +79,7 @@ module SequenceServer
             "&database_ids=#{database_ids}"
 
       {
-        :order => 0,
+        :order => 1,
         :url   => url,
         :title => 'Sequence',
         :class => 'view-sequence',
@@ -82,7 +94,7 @@ module SequenceServer
             "&database_ids=#{database_ids}&download=fasta"
 
       {
-        :order => 1,
+        :order => 2,
         :title => 'FASTA',
         :url   => url,
         :class => 'download',
@@ -96,7 +108,7 @@ module SequenceServer
       ncbi_id = encode ncbi_id
       url = "http://www.ncbi.nlm.nih.gov/#{querydb.first.type}/#{ncbi_id}"
       {
-        :order => 2,
+        :order => 3,
         :title => 'NCBI',
         :url   => url,
         :icon  => 'fa-external-link'
@@ -109,7 +121,7 @@ module SequenceServer
       uniprot_id = encode uniprot_id
       url = "http://www.uniprot.org/uniprot/#{uniprot_id}"
       {
-        :order => 2,
+        :order => 3,
         :title => 'Uniprot',
         :url   => url,
         :icon  => 'fa-external-link'
