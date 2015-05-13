@@ -254,7 +254,7 @@
 
 					  <% if not params[:seq].nil? and not params[:seq].empty? %>
 					  $(document).ready(function() {
-						  $('#sequence').val('<%= URI.decode(params[:seq]) %>');
+						  $('#sequence').val('<%= params[:seq].gsub! '\n', '<BR/>' %>');
 					  });
 					  <% end %>
 				  </script>
