@@ -8,7 +8,8 @@ module SequenceServer
     # http://www.sinatrarb.com/configuration.html
     configure do
       # We don't need Rack::MethodOverride. Let's avoid the overhead.
-      disable :method_override
+      # disable :method_override
+      disable :protection
 
       # Ensure exceptions never leak out of the app. Exceptions raised within
       # the app must be handled by the app. We do this by attaching error
