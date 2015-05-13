@@ -118,6 +118,7 @@ target="#{target}">)
 
     # Render the search form.
     get '/' do
+      logger.debug params
       erb :search, :locals => { :databases => Database.group_by(&:type) }
     end
 
