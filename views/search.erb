@@ -254,7 +254,7 @@
 
 					  <% if not params[:seq].nil? and not params[:seq].empty? %>
 					  $(document).ready(function() {
-						  $('#sequence').val('<%= params[:seq].gsub(/\x0d/, '<BR/>') %>');
+						  $('#sequence').val('<%= params[:seq].gsub('%0D%0A', '<BR/>') %>');
 					  });
 					  <% end %>
 				  </script>
