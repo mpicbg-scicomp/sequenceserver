@@ -17,7 +17,7 @@
       <script src="js/html5shiv.js"></script>
   <![endif]-->
 
-  <script type="text/javascript" src="<%= uri('/js/jquery.js') %>"></script>
+  <script type="text/javascript" src="<%= uri('/js/jquery.min.js') %>"></script>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <% if settings.production? %>
@@ -201,28 +201,28 @@
               <div
                 class="panel-heading">
                 <h4><%= type.capitalize %> databases</h4>
-              </div>
 
-				<!-- Select all -->
-				<label class="checkbox">
-					<input type="checkbox" name="select-all" id="select-all" data-type="nucleotide"/> <b>Select all</b>
-				</label>
-				<script>
-					$('#select-all').click(function(event) {
-						if(this.checked) {
-							// Iterate each checkbox
-							$(':checkbox').each(function() {
-								this.checked = true;
-							});
-						} else {
-							$(':checkbox').each(function() {
-								this.checked = false;
-							});
-						}
-						//SS.blast.init();
-					});
-				</script>
-				<!-- select all end -->
+				  <!-- Select all -->
+				  <label class="checkbox">
+					  <input type="checkbox" name="select-all" id="select-all" data-type="nucleotide"/> <b>Select all</b>
+				  </label>
+				  <script>
+					  $('#select-all').click(function(event) {
+						  if(this.checked) {
+							  // Iterate each checkbox
+							  $(':checkbox').each(function() {
+								  this.checked = true;
+							  });
+						  } else {
+							  $(':checkbox').each(function() {
+								  this.checked = false;
+							  });
+						  }
+					  });
+				  </script>
+				  <!-- select all end -->
+
+              </div>
 
               <ul
                 class="list-group databases <%= type %>">
