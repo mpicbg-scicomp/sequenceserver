@@ -243,18 +243,18 @@
                 <% end %>
 
 				  <script>
-					  $('#<%= params[:db] %>').prop('checked', true);
+					  $('#<%= db %>').prop('checked', true);
 
-					  <% if not params[:org].nil? and not params[:org].empty? %>
+					  <% if not org.nil? and not org.empty? %>
 					  $(':checkbox').each(function() {
-						  if(this.id.indexOf('<%=params[:org]%>') > -1)
+						  if(this.id.indexOf('<%=org%>') > -1)
 							  this.checked = true;
 					  });
 					  <% end %>
 
-					  <% if not params[:seq].nil? and not params[:seq].empty? %>
+					  <% if not seq.nil? and not seq.empty? %>
 					  $(document).ready(function() {
-						  $('#sequence').val('<%= params[:seq] %>');
+						  $('#sequence').val('<%=seq%>');
 					  });
 					  <% end %>
 				  </script>
