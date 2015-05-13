@@ -235,7 +235,7 @@
                     <div
                       class="checkbox">
                       <label>
-                        <input type="checkbox" name="databases[]" value="<%=database.id%>" data-type="<%=database.type%>" />
+                        <input type="checkbox" name="databases[]" value="<%=database.id%>" data-type="<%=database.type%>" id="<%=database.title%>"/>
                         <%= database.title or database.name %>
                       </label>
                     </div>
@@ -243,7 +243,6 @@
                 <% end %>
 
 				  <script>
-					  console.log("<%= params %>");
 					  $('#<%= params[:db] %>').prop('checked', true);
 
 					  <% if not params[:org].nil? and not params[:org].empty? %>
