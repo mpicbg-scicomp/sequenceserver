@@ -203,15 +203,13 @@
                 <h4><%= type.capitalize %> databases</h4>
 
 				  <!-- Select all -->
-				  <ul class="list-group">
-					  <li class="list-group-item">
-					  <div class="checkbox">
-						  <label class="checkbox">
-							  <input type="checkbox" name="select-all" id="select-all" data-type="nucleotide"/> <b>Select all</b>
-						  </label>
-					  </div>
-					  </li>
-				  </ul>
+
+				  <div class="checkbox">
+					  <label class="checkbox">
+						  <input type="checkbox" name="select-all" id="select-all" data-type="nucleotide"/> <b>Select all</b>
+					  </label>
+				  </div>
+
 				  <script>
 					  $('#select-all').click(function(event) {
 						  if(this.checked) {
