@@ -203,7 +203,7 @@
               </div>
               <ul
                 class="list-group databases <%= type %>">
-                <% databases[type].sort_by(&:title).each do |database| %>
+				<% databases[type].sort{|x,y| x.title[/_[a-zA-Z]+_/] <=> y.title[/_[a-zA-Z]+_/]}.each do |database| %>
                   <li class="list-group-item">
                     <div
                       class="checkbox">
