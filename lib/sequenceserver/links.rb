@@ -62,7 +62,7 @@ module SequenceServer
 
     def planmine
       accession  = encode self.accession
-      host = request.host
+      host = "scicomp-pc-1-10gb"
       url = "http://#{host}/planmine/portal.do?externalids=#{accession}"
       {
           :order => 0,
